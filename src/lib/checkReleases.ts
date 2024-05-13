@@ -1,6 +1,6 @@
 /**
  * Script Tray Website
- * Copyright (c) 2024 Matthew Evans - See LICENSE.md
+ * Copyright (c) 2024-present Matthew Evans - See LICENSE.md
  */
 
 const githubURL = 'https://api.github.com/repos/AtomicSponge/script_tray/releases/latest'
