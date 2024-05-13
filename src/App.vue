@@ -34,6 +34,4 @@ section  //  main body
   flex auto
   overflow auto
   text-align left
-  margin-left 12px
-  margin-right 8px
 </style>
