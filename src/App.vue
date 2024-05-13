@@ -20,7 +20,7 @@ import SiteFooter from './components/SiteFooter.vue'
     </template>
   </Suspense>
   <section>
-    test text
+    test text<br/>
   </section>
   <SiteFooter/>
 </template>

@@ -8,32 +8,30 @@ import { ref } from 'vue'
 
 const showLicense = ref(false)
 
-const licenseStr = `Copyright (c) 2024-present Matthew Evans<br/>
-<br/>
+const licenseStr = `
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
 to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
 copies of the Software, and to permit persons to whom the Software is
-furnished to do so, subject to the following conditions:<br/>
-<br/>
+furnished to do so, subject to the following conditions:
+<br/><br/>
 The above copyright notice and this permission notice shall be included in all
-copies or substantial portions of the Software.<br/>
-<br/>
+copies or substantial portions of the Software.
+<br/><br/>
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
 IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
 FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
 AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
-SOFTWARE.`
-
+SOFTWARE.<br/>`
 </script>
 
 <template>
   <footer>
-    &#169; Matthew Evans 2024-present<br/>
-    <span v-if="showLicense">{{ licenseStr }}</span>
+    Copyright &#169; 2024-present Matthew Evans<br/>
+    <span v-if="showLicense" v-html="licenseStr"></span>
     Licenced under the <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="() => { return false }">MIT licence</a><br/>
     Robot icon made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>
     is licensed by <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
@@ -43,6 +41,6 @@ SOFTWARE.`
 <style lang="stylus" scoped>
 footer
   text-align right
-  font-size smaller
+  font-size x-small
   margin-bottom 8px
 </style>
