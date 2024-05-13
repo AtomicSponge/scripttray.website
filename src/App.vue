@@ -5,6 +5,7 @@
 
 <script setup lang="ts">
 import DownloadNav from './components/DownloadNav.vue'
+import DisplayLicense from './components/DisplayLicense.vue'
 </script>
 
 <template>
@@ -23,7 +24,10 @@ import DownloadNav from './components/DownloadNav.vue'
   <section>
     test text
   </section>
-  <footer>Cr Me</footer>
+  <footer>
+    &#169; Matthew Evans 2024-present<br/>
+    Licenced under the MIT licence
+  </footer>
 </template>
 
 <style lang="stylus" scoped>
@@ -41,5 +45,6 @@ section  //  main body
   margin-left 12px
 footer
   text-align right
-  padding 2px
+  font-size smaller
+  margin-bottom 8px
 </style>
