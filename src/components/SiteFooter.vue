@@ -26,13 +26,18 @@ AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
 LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.<br/>`
+
+const toggleShow = () => {
+  showLicense.value = !showLicense.value
+  return false
+}
 </script>
 
 <template>
   <footer>
     Copyright &#169; 2024-present Matthew Evans<br/>
     <span v-if="showLicense" v-html="licenseStr"></span>
-    Licenced under the <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="() => { return false }">MIT licence</a><br/>
+    Licenced under the <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="toggleShow">MIT licence</a><br/>
     Robot icon made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>
     is licensed by <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
   </footer>
