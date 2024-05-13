@@ -12,12 +12,8 @@ import SiteFooter from './components/SiteFooter.vue'
 <template>
   <SiteHeader/>
   <Suspense>
-    <template #default>
-      <DownloadNav class="navBtns"/>
-    </template>
-    <template #fallback>
-      Loading...
-    </template>
+    <template #default><DownloadNav class="navBtns"/></template>
+    <template #fallback>&nbsp;<br/><br/>&nbsp;</template>
   </Suspense>
   <section>
     test text<br/>
