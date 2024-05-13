@@ -37,6 +37,8 @@ header
 section  //  main body
   flex auto
   overflow auto
+  text-align left
+  margin-left 12px
 footer
   text-align right
   padding 2px
