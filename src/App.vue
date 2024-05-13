@@ -5,11 +5,12 @@
 
 <script setup lang="ts">
 import DownloadNav from './components/DownloadNav.vue'
-import DisplayLicense from './components/DisplayLicense.vue'
+//import DisplayLicense from './components/DisplayLicense.vue'
 </script>
 
 <template>
   <header>
+    <img src="/src/assets/robot-96x96.png" class="logo"/>
     <h1>Script Tray</h1>
     Run commands from your system tray<br/>
   </header>
@@ -26,11 +27,16 @@ import DisplayLicense from './components/DisplayLicense.vue'
   </section>
   <footer>
     &#169; Matthew Evans 2024-present<br/>
-    Licenced under the MIT licence
+    Licenced under the MIT licence<br/>
+    Robot icon made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>
+    is licensed by <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
   </footer>
 </template>
 
 <style lang="stylus" scoped>
+.logo
+  width 96px
+  height 96px
 header
   text-align right
   float right
