@@ -4,6 +4,10 @@
 -->
 
 <script setup lang="ts">
+import { ref } from 'vue'
+
+const showLicense = ref(false)
+
 const licenseStr = `Copyright (c) 2024-present Matthew Evans<br/>
 <br/>
 Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -24,13 +28,13 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.`
 
-
 </script>
 
 <template>
   <footer>
     &#169; Matthew Evans 2024-present<br/>
-    Licenced under the <a href="#" onclick="return false">MIT licence</a><br/>
+    <span v-if="showLicense">{{ licenseStr }}</span>
+    Licenced under the <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="() => { return false }">MIT licence</a><br/>
     Robot icon made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>
     is licensed by <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
   </footer>
