@@ -47,5 +47,6 @@ const toggleShow = () => {
 footer
   text-align right
   font-size x-small
+  line-height 1.5
   margin-bottom 8px
 </style>

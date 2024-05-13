@@ -18,6 +18,7 @@ header
   margin-left auto
   display flex
   text-align right
+  line-height 1.5
 .logo
   align-self flex-end
   width 96px

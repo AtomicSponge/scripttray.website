@@ -16,7 +16,14 @@ import SiteFooter from './components/SiteFooter.vue'
     <template #fallback>&nbsp;<br/><br/>&nbsp;</template>
   </Suspense>
   <section>
-    test text<br/>
+    <h2>Test header</h2>
+    test text<br/>test text<br/>test text<br/>
+    <h2>Test header</h2>
+    test text<br/>test text<br/>test text<br/>
+    <h2>Test header</h2>
+    test text<br/>test text<br/>test text<br/>
+    <h2>Test header</h2>
+    test text<br/>test text<br/>test text<br/>
   </section>
   <SiteFooter/>
 </template>
