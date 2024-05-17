@@ -6,7 +6,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const githubURL = 'https://api.github.com/repos/AtomicSponge/script_tray/releases/latest'
+const GitHubURL = 'https://api.github.com/repos/AtomicSponge/script_tray/releases/latest'
 
 /**
  * Get the release JSON from the GitHub API
@@ -16,7 +16,7 @@ const githubURL = 'https://api.github.com/repos/AtomicSponge/script_tray/release
 const checkReleases = async ():Promise<Releases> => {
   const result = await (async () => {
     try {
-      const response = await fetch(githubURL)
+      const response = await fetch(GitHubURL)
       return response.json()
     } catch (error:any) {  //  Catch connection errors
       return <Releases>{
@@ -42,14 +42,18 @@ const checkReleases = async ():Promise<Releases> => {
   const linURLs:Array<URLAsset> = []
 
   //  Parse JSON from 'result' and extract URLs
-  //  This assumes one of each installer type
+  //  Skip yml, .exe = win, .dmg = mac, all else = linux
   result.assets.forEach((asset:Asset) => {
-    if(asset.browser_download_url.endsWith('.exe'))
+    if(asset.browser_download_url.endsWith('.yml')) return
+    if(asset.browser_download_url.endsWith('.exe')) {
       winURLs.push({ name: asset.name, url: asset.browser_download_url })
-    else if(asset.browser_download_url.endsWith('.dmg'))
+      return
+    }
+    if(asset.browser_download_url.endsWith('.dmg')) {
       macURLs.push({ name: asset.name, url: asset.browser_download_url })
-    else
-      linURLs.push({ name: asset.name, url: asset.browser_download_url })
+      return
+    }
+    linURLs.push({ name: asset.name, url: asset.browser_download_url })
   })
 
   return <Releases>{
@@ -68,15 +72,15 @@ const releases = ref(await checkReleases())
   <div v-if="!releases.error" id="downloads">
     <h3>Windows</h3>
     <li v-for="link in releases.winURLs">
-      <a href="{{ link.url }}">{{ link.name }}</a>
+      <a :href="link.url">{{ link.name }}</a>
     </li>
     <h3>Mac</h3>
     <li v-for="link in releases.macURLs">
-      <a href="{{ link.url }}">{{ link.name }}</a>
+      <a :href="link.url">{{ link.name }}</a>
     </li>
     <h3>Linux</h3>
     <li v-for="link in releases.linURLs">
-      <a href="{{ link.url }}">{{ link.name }}</a>
+      <a :href="link.url">{{ link.name }}</a>
     </li>
   </div>
   <!-- Display error if any -->
