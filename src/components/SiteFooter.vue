@@ -36,7 +36,7 @@ const toggleShow = () => {
 <template>
   <footer>
     <div class="title">Copyright &#169; 2024-present Matthew Evans</div>
-    <span v-if="showLicense" v-html="licenseStr"></span>
+    <span v-show="showLicense" v-html="licenseStr"></span>
     <div>Licenced under the <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="toggleShow">MIT licence</a></div>
     <div>
       Robot icon made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>
