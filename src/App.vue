@@ -5,25 +5,22 @@
 
 <script setup lang="ts">
 import SiteHeader from './components/SiteHeader.vue'
+import DownloadLinks from './components/DownloadLinks.vue'
 import SiteFooter from './components/SiteFooter.vue'
 </script>
 
 <template>
   <SiteHeader/>
   <section>
-    <h2>Test header</h2>
-    <a href="">test test test</a><br/>
-    test text<br/>test text<br/>test text<br/>
-    <h2>Test header</h2>
-    test text<br/>test text<br/>test text<br/>
-    <h2>Test header</h2>
-    test text<br/>test text<br/>test text<br/>
-    <h2>Test header</h2>
-    test text<br/>test text<br/>test text<br/>
-    <h2>Test header</h2>
-    test text<br/>test text<br/>test text<br/>
-    <h2>Test header</h2>
-    test text<br/>test text<br/>test text<br/>
+    <h2>Downloads</h2>
+    <Suspense>
+      <template #default>
+        <DownloadLinks/>
+      </template>
+      <template #fallback>
+        Loading...
+      </template>
+    </Suspense>
     <h2>Test header</h2>
     test text<br/>test text<br/>test text<br/>
     <h2>Test header</h2>

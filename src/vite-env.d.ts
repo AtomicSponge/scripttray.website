@@ -2,14 +2,21 @@
 
 /** Used when parsing GitHub API */
 type Asset = {
+  name: string
   browser_download_url: string
+}
+
+/** URL and its title for releases */
+type URLAsset = {
+  name: string
+  url: string
 }
 
 /** Releases URLs */
 type Releases = {
-  winURLs: Array<string>
-  macURLs: Array<string>
-  linURLs: Array<string>
+  winURLs: Array<URLAsset>
+  macURLs: Array<URLAsset>
+  linURLs: Array<URLAsset>
   message: string
-  error: number
+  error: boolean
 }
