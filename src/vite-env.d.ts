@@ -7,8 +7,8 @@ type Asset = {
 
 /** Releases URLs */
 type Releases = {
-  winURL: string
-  macURL: string
+  winURLs: Array<string>
+  macURLs: Array<string>
   linURLs: Array<string>
   message: string
   error: number

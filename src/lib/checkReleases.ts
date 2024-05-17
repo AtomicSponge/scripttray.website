@@ -10,14 +10,14 @@ const githubURL = 'https://api.github.com/repos/AtomicSponge/script_tray/release
  * Then parse into URLs for each OS
  * @returns Object containing processed results.
  */
-export const checkReleases = async () => {
+export const checkReleases = async ():Promise<Releases> => {
   const result = await (async () => {
     try {
       const response = await fetch(githubURL)
       return response.json()
-    } catch (e) {  //  Catch connection errors
+    } catch (error:any) {  //  Catch connection errors
       return <Releases>{
-        message: `Unable to locate latest release!  Please try again later.\n${e}`,
+        message: `Unable to locate latest release!  Please try again later.\n${error.message}`,
         error: 1
       }
     }
@@ -30,24 +30,24 @@ export const checkReleases = async () => {
     }
   }
 
-  let winURL = 'invalid'
-  let macURL = 'invalid'
-  let linURLs = [ 'invalid' ]
+  let winURLs:Array<string> = []
+  let macURLs:Array<string> = []
+  let linURLs:Array<string> = []
 
   //  Parse JSON from 'result' and extract URLs
   //  This assumes one of each installer type
   result.assets.forEach((asset:Asset) => {
     if(asset.browser_download_url.endsWith('.exe'))
-      winURL = asset.browser_download_url
+      winURLs.push(asset.browser_download_url)
     else if(asset.browser_download_url.endsWith('.dmg'))
-      macURL = asset.browser_download_url
+      macURLs.push(asset.browser_download_url)
     else
       linURLs.push(asset.browser_download_url)
   })
 
   return <Releases>{
-    winURL: winURL,
-    macURL: macURL,
+    winURLs: winURLs,
+    macURLs: macURLs,
     linURLs: linURLs,
     error: 0
   }

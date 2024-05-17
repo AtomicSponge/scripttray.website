@@ -35,15 +35,19 @@ const toggleShow = () => {
 
 <template>
   <footer>
-    Copyright &#169; 2024-present Matthew Evans<br/>
+    <div class="title">Copyright &#169; 2024-present Matthew Evans</div>
     <span v-if="showLicense" v-html="licenseStr"></span>
-    Licenced under the <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="toggleShow">MIT licence</a><br/>
-    Robot icon made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>
-    is licensed by <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    <div>Licenced under the <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="toggleShow">MIT licence</a></div>
+    <div>
+      Robot icon made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>
+      is licensed by <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
+    </div>
   </footer>
 </template>
 
 <style lang="stylus" scoped>
+.title
+  font-weight bold
 footer
   text-align right
   font-size x-small

@@ -5,18 +5,14 @@
 
 <script setup lang="ts">
 import SiteHeader from './components/SiteHeader.vue'
-import DownloadNav from './components/DownloadNav.vue'
 import SiteFooter from './components/SiteFooter.vue'
 </script>
 
 <template>
   <SiteHeader/>
-  <Suspense>
-    <template #default><DownloadNav class="navBtns"/></template>
-    <template #fallback>&nbsp;<br/><br/>&nbsp;</template>
-  </Suspense>
   <section>
     <h2>Test header</h2>
+    <a href="">test test test</a><br/>
     test text<br/>test text<br/>test text<br/>
     <h2>Test header</h2>
     test text<br/>test text<br/>test text<br/>
