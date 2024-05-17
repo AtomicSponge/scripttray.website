@@ -12,21 +12,35 @@ import SiteFooter from './components/SiteFooter.vue'
 <template>
   <SiteHeader/>
   <section>
-    <h2>Downloads</h2>
-    <Suspense>
-      <template #default>
-        <DownloadLinks/>
-      </template>
-      <template #fallback>
-        Loading...
-      </template>
-    </Suspense>
-    <h2>Test header</h2>
-    test text<br/>test text<br/>test text<br/>
-    <h2>Test header</h2>
-    test text<br/>test text<br/>test text<br/>
-    <h2>Test header</h2>
-    test text<br/>test text<br/>test text<br/>
+    <div>
+      <h2>Test header</h2>
+      test text<br/>test text<br/>test text<br/>
+    </div>
+    <div>
+      <!-- Downloads -->
+      <h2>Downloads</h2>
+      <Suspense>
+        <template #default>
+          <DownloadLinks/>
+        </template>
+        <template #fallback>
+          Loading...
+        </template>
+      </Suspense>
+      <!-- End Downloads -->
+    </div>
+    <div>
+      <h2>Test header</h2>
+      test text<br/>test text<br/>test text<br/>
+    </div>
+    <div>
+      <h2>Test header</h2>
+      test text<br/>test text<br/>test text<br/>
+    </div>
+    <div>
+      <h2>Test header</h2>
+      test text<br/>test text<br/>test text<br/>
+    </div>
   </section>
   <SiteFooter/>
 </template>

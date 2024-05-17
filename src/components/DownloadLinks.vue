@@ -71,17 +71,23 @@ const releases = ref(await checkReleases())
 <template>
   <div v-if="!releases.error" id="downloads">
     <h3>Windows</h3>
-    <li v-for="link in releases.winURLs">
-      <a :href="link.url">{{ link.name }}</a>
-    </li>
+    <ul>
+      <li v-for="link in releases.winURLs">
+        <a :href="link.url">{{ link.name }}</a>
+      </li>
+    </ul>
     <h3>Mac</h3>
-    <li v-for="link in releases.macURLs">
-      <a :href="link.url">{{ link.name }}</a>
-    </li>
+    <ul>
+      <li v-for="link in releases.macURLs">
+        <a :href="link.url">{{ link.name }}</a>
+      </li>
+    </ul>
     <h3>Linux</h3>
-    <li v-for="link in releases.linURLs">
-      <a :href="link.url">{{ link.name }}</a>
-    </li>
+    <ul>
+      <li v-for="link in releases.linURLs">
+        <a :href="link.url">{{ link.name }}</a>
+      </li>
+    </ul>
   </div>
   <!-- Display error if any -->
   <div v-else id="downloads" class="error">
