@@ -42,7 +42,10 @@ const toggleShow = () => {
       </a>
     </div>
     <span v-show="showLicense" v-html="licenseStr"></span>
-    <div>Licenced under the <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="toggleShow">MIT licence</a></div>
+    <div>
+      Licenced under the
+      <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="toggleShow">MIT licence</a>
+    </div>
     <div>
       Robot icon made from <a href="http://www.onlinewebfonts.com">Web Fonts</a>
       is licensed by <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a>
