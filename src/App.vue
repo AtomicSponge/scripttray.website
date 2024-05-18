@@ -18,7 +18,6 @@ import SiteFooter from './components/SiteFooter.vue'
     </div>
     <div>
       <!-- Downloads -->
-      <h2>Downloads</h2>
       <Suspense>
         <template #default>
           <DownloadLinks/>

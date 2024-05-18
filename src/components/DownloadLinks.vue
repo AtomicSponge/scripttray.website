@@ -80,6 +80,7 @@ const releases = ref(await checkReleases())
 </script>
 
 <template>
+  <h2>Downloads</h2>
   <div v-if="!releases.error" id="downloads">
     <div v-show="releases.winURLs.length !== 0">
       <h3>Windows</h3>
