@@ -17,6 +17,7 @@ type Releases = {
   winURLs: Array<URLAsset>
   macURLs: Array<URLAsset>
   linURLs: Array<URLAsset>
+  sourceURLs:Array<URLAsset>
   message: string
   error: boolean
 }
