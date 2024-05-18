@@ -6,7 +6,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-//const GitHubURL = 'https://api.github.com/repos/AtomicSponge/script_tray/releases/latest'
+//const GitHubURL = 'https://api.github.com/repos/AtomicSponge/script-tray/releases/latest'
 const GitHubURL = 'https://api.github.com/repos/vercel/hyper/releases/latest'
 
 /**
