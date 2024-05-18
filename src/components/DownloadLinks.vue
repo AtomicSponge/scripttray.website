@@ -50,7 +50,6 @@ const checkReleases = async ():Promise<Releases> => {
 
   //  Parse JSON from 'result' and extract URLs
   result.assets.forEach((asset:Asset) => {
-    if (asset.browser_download_url.endsWith('.yml')) return
     if (asset.browser_download_url.endsWith('.exe')) {
       winURLs.push({ name: asset.name, url: asset.browser_download_url })
       return
