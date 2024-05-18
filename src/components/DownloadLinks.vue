@@ -49,7 +49,6 @@ const checkReleases = async ():Promise<Releases> => {
     sourceURLs.push({ name: 'zipball', url: result.zipball_url })
 
   //  Parse JSON from 'result' and extract URLs
-  //  Skip yml, .exe = win, .dmg = mac, all else = linux
   result.assets.forEach((asset:Asset) => {
     if (asset.browser_download_url.endsWith('.yml')) return
     if (asset.browser_download_url.endsWith('.exe')) {
