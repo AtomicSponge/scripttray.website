@@ -35,7 +35,12 @@ const toggleShow = () => {
 
 <template>
   <footer>
-    <div class="title">Copyright &#169; 2024-present Matthew Evans</div>
+    <div class="title">
+      Copyright &#169; 2024-present Matthew Evans
+      <a href="https://github.com/AtomicSponge">
+        <img src="/src/assets/github-mark-white.png" class="github"/>
+      </a>
+    </div>
     <span v-show="showLicense" v-html="licenseStr"></span>
     <div>Licenced under the <a href="#" @mouseover="showLicense = true" @mouseleave="showLicense = false" @click="toggleShow">MIT licence</a></div>
     <div>
@@ -48,6 +53,9 @@ const toggleShow = () => {
 <style lang="stylus" scoped>
 .title
   font-weight bold
+.github
+  width 8px
+  height 8px
 footer
   text-align right
   font-size x-small
