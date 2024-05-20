@@ -9,41 +9,33 @@
 import { ref } from 'vue'
 
 const props = defineProps<{
-  id:string
+  id?:string
   src:string
   alt?:string
   width?:string
   height?:string
 }>()
 
-const modal = {
-  id: props.id + '_zoom_modal',
-  img: props.id + '_zoom_modal_img',
-}
+const _showModal = ref(false)
+const _modalName = ref('modal-content')
 
-const zoomIn = () => {
-  const imgElm = <HTMLImageElement>(document.getElementById(props.id))
-  const modalElm = <HTMLDivElement>(document.getElementById(modal.id))
-  const modalImgElm = <HTMLImageElement>(document.getElementById(modal.img))
-  modalElm.style.display = 'block'
-  modalImgElm.alt = imgElm.alt
-}
+/** Show modal and zoom in */
+const zoomIn = () => { _showModal.value = true }
 
+/** Zoom out and hide modal */
 const zoomOut = () => {
-  const modalElm = <HTMLDivElement>(document.getElementById(modal.id))
-  const modalImgElm = <HTMLImageElement>(document.getElementById(modal.img))
-  modalImgElm.className += ' out'
+  _modalName.value += ' out'
   setTimeout(() => {
-    modalElm.style.display = 'none'
-    modalImgElm.className = 'modal-content'
+    _showModal.value = false
+    _modalName.value = 'modal-content'
   }, 400)
 }
 </script>
 
 <template>
   <img :id :src :alt :width :height class="mainImg" @click="zoomIn()">
-  <div :id="modal.id" class="modal" @click="zoomOut()">
-    <img :id="modal.img" :src class="modal-content" loading="lazy">
+  <div v-show="_showModal" class="modal" @click="zoomOut()">
+    <img :src :alt :class="_modalName" loading="lazy">
   </div>
 </template>
 
@@ -59,7 +51,6 @@ const zoomOut = () => {
   opacity 0.7
 
 .modal
-  display none
   position fixed
   z-index 99
   padding-top 100px
