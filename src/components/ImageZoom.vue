@@ -53,7 +53,7 @@ const zoomOut = () => {
 .modal
   position fixed
   z-index 99
-  padding-top 100px
+  padding-top 20px
   left 0
   top 0
   width 100%
