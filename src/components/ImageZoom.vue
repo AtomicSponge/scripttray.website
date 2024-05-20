@@ -8,7 +8,7 @@
 <script setup lang="ts">
 import { ref } from 'vue'
 
-const props = defineProps<{
+defineProps<{
   id?:string
   src:string
   alt?:string
