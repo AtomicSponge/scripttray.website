@@ -7,6 +7,8 @@
 import SiteHeader from './components/SiteHeader.vue'
 import DownloadLinks from './components/DownloadLinks.vue'
 import SiteFooter from './components/SiteFooter.vue'
+
+import ImageZoom from './components/ImageZoom.vue'
 </script>
 
 <template>
@@ -16,6 +18,8 @@ import SiteFooter from './components/SiteFooter.vue'
       <h2>Test header</h2>
       test text<br/>test text<br/>test text<br/>
     </div>
+    <ImageZoom id="img01" src="/src/assets/robot-96x96.png" width="100"/>
+    <ImageZoom id="img02" src="/src/assets/github-mark-white.png" width="100"/>
     <div>
       <!-- Downloads -->
       <Suspense>
