@@ -26,7 +26,6 @@ const zoomIn = () => {
   const modalElm = <HTMLDivElement>(document.getElementById(modal.id))
   const modalImgElm = <HTMLImageElement>(document.getElementById(modal.img))
   modalElm.style.display = 'block'
-  modalImgElm.src = imgElm.src
   modalImgElm.alt = imgElm.alt
 }
 
@@ -44,7 +43,7 @@ const zoomOut = () => {
 <template>
   <img :id :src :alt :width :height class="mainImg" @click="zoomIn()">
   <div :id="modal.id" class="modal" @click="zoomOut()">
-    <img :id="modal.img" class="modal-content">
+    <img :id="modal.img" :src class="modal-content" loading="lazy">
   </div>
 </template>
 
