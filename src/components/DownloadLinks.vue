@@ -40,12 +40,21 @@ interface Releases {
  * @returns Object containing processed results
  */
 const checkReleases = async (__GitHubURL__:string):Promise<Releases> => {
+  const winURLs:Array<URLAsset> = []
+  const macURLs:Array<URLAsset> = []
+  const linURLs:Array<URLAsset> = []
+  const sourceURLs:Array<URLAsset> = []
+
   const result = await (async () => {
     try {
       const response = await fetch(__GitHubURL__)
       return response.json()
     } catch (error:any) {  //  Catch connection errors
       return <Releases>{
+        winURLs: winURLs,
+        macURLs: macURLs,
+        linURLs: linURLs,
+        sourceURLs: sourceURLs,
         message: `
           Unable to locate latest releases!<br/>
           Please try again later.<br/>${error.message}`,
@@ -56,6 +65,10 @@ const checkReleases = async (__GitHubURL__:string):Promise<Releases> => {
   if (result.error) return result  //  IIFE resulted in error, return
   if (result.message === 'Not Found') {  //  Github repo not found
     return <Releases>{
+      winURLs: winURLs,
+      macURLs: macURLs,
+      linURLs: linURLs,
+      sourceURLs: sourceURLs,
       message: `
         Unable to locate latest releases!<br/>
         Please try again later.<br/>404: Not Found`,
@@ -64,17 +77,16 @@ const checkReleases = async (__GitHubURL__:string):Promise<Releases> => {
   }
   if (!result.hasOwnProperty('assets')) {  //  Found result, but no assets
     return <Releases>{
+      winURLs: winURLs,
+      macURLs: macURLs,
+      linURLs: linURLs,
+      sourceURLs: sourceURLs,
       message: `
         Unable to locate latest releases!<br/>
         Please try again later.<br/>400: Bad Request`,
       error: true
     }
   }
-
-  const winURLs:Array<URLAsset> = []
-  const macURLs:Array<URLAsset> = []
-  const linURLs:Array<URLAsset> = []
-  const sourceURLs:Array<URLAsset> = []
 
   //  Parse JSON from 'result' and extract URLs
   if (result.tarball_url)
