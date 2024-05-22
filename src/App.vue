@@ -9,6 +9,7 @@ import DownloadLinks from './components/DownloadLinks.vue'
 import SiteFooter from './components/SiteFooter.vue'
 
 import ImageZoom from './components/ImageZoom.vue'
+//import ImageZoom from '@spongex/vue-image-zoom'
 </script>
 
 <template>
