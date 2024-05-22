@@ -9,15 +9,40 @@ import { ref } from 'vue'
 //const GitHubURL = 'https://api.github.com/repos/AtomicSponge/script-tray/releases/latest'
 const GitHubURL = 'https://api.github.com/repos/vercel/hyper/releases/latest'
 
+/** Parsed download URLs and their display labels */
+interface URLAsset {
+  /** Display label for URL */
+  name:string
+  /** URL for downloading asset */
+  url:string
+}
+
+/** Object containing parsed URLs and information about the request */
+interface Releases {
+  /** List of Windows Assets */
+  winURLs:Array<URLAsset>
+  /** List of Mac Assets */
+  macURLs:Array<URLAsset>
+  /** List of Linux Assets */
+  linURLs:Array<URLAsset>
+  /** List of source code assets */
+  sourceURLs:Array<URLAsset>
+  /** Result message */
+  message:string
+  /** Error flag */
+  error:boolean
+}
+
 /**
  * Get the release JSON from the GitHub API
  * Then parse into URLs for each OS
+ * @param __GitHubURL__ The GitHub API URL to parse
  * @returns Object containing processed results
  */
-const checkReleases = async ():Promise<Releases> => {
+const checkReleases = async (__GitHubURL__:string):Promise<Releases> => {
   const result = await (async () => {
     try {
-      const response = await fetch(GitHubURL)
+      const response = await fetch(__GitHubURL__)
       return response.json()
     } catch (error:any) {  //  Catch connection errors
       return <Releases>{
@@ -37,6 +62,14 @@ const checkReleases = async ():Promise<Releases> => {
       error: true
     }
   }
+  if (!result.hasOwnProperty('assets')) {  //  Found result, but no assets
+    return <Releases>{
+      message: `
+        Unable to locate latest releases!<br/>
+        Please try again later.<br/>400: Bad Request`,
+      error: true
+    }
+  }
 
   const winURLs:Array<URLAsset> = []
   const macURLs:Array<URLAsset> = []
@@ -49,7 +82,7 @@ const checkReleases = async ():Promise<Releases> => {
   if (result.zipball_url)
     sourceURLs.push({ name: 'zipball', url: result.zipball_url })
 
-  result.assets.forEach((asset:Asset) => {
+  result.assets.forEach((asset:{name: string, browser_download_url: string}) => {
     if (asset.browser_download_url.endsWith('.exe')) {
       winURLs.push({ name: asset.name, url: asset.browser_download_url })
       return
@@ -76,7 +109,7 @@ const checkReleases = async ():Promise<Releases> => {
   }
 }
 
-const releases = ref(await checkReleases())
+const releases = ref(await checkReleases(GitHubURL))
 </script>
 
 <template>
