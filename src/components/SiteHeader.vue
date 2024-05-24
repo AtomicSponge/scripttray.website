@@ -11,7 +11,7 @@
       Run commands from your system tray
     </div>
   </header>
-  <table class="navigation">
+  <table>
     <tr>
       <td><a href="#downloads">Downloads</a></td>
       <td><a href="#downloads">Another</a></td>
@@ -31,6 +31,9 @@ header
   line-height 1.5
 table
   table-layout fixed
+  position absolute
+  top 12px
+  left 16px
 td
   padding-right 18px
   padding-bottom 4px
@@ -38,10 +41,6 @@ td
   align-self flex-end
   width 96px
   height 96px
-.navigation
-  position absolute
-  top 12px
-  left 16px
 
 @media only screen and (max-width: 700px)
   table
