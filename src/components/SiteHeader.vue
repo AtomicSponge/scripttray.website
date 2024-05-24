@@ -4,18 +4,16 @@
 -->
 
 <template>
-  <div class="navigation">
-    <table>
-      <tr>
-        <td><a href="#downloads">Downloads</a></td>
-        <td><a href="#downloads">Another</a></td>
-      </tr>
-      <tr>
-        <td><a href="#downloads">Downloads</a></td>
-        <td><a href="#downloads">Another</a></td>
-      </tr>
-    </table>
-  </div>
+  <table class="navigation">
+    <tr>
+      <td><a href="#downloads">Downloads</a></td>
+      <td><a href="#downloads">Another</a></td>
+    </tr>
+    <tr>
+      <td><a href="#downloads">Downloads</a></td>
+      <td><a href="#downloads">Another</a></td>
+    </tr>
+  </table>
   <header>
     <img src="/src/assets/robot-96x96.png" class="logo"/>
     <div>
