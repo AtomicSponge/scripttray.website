@@ -40,6 +40,12 @@ interface Releases {
  * @returns Object containing processed results
  */
 const checkGitHubReleases = async (__GitHubURL__:string):Promise<Releases> => {
+  const _ext = {
+    winExt: [ '.exe' ],
+    macExt: [ '.dmg' ],
+    linExt: [ '.deb', '.rpm', '.AppImage' ]
+  }
+
   const winURLs:Array<URLAsset> = []
   const macURLs:Array<URLAsset> = []
   const linURLs:Array<URLAsset> = []
@@ -95,20 +101,24 @@ const checkGitHubReleases = async (__GitHubURL__:string):Promise<Releases> => {
     sourceURLs.push({ name: 'zipball', url: result.zipball_url })
 
   result.assets.forEach((asset:{name:string, browser_download_url:string}) => {
-    if (asset.browser_download_url.endsWith('.exe')) {
-      winURLs.push({ name: asset.name, url: asset.browser_download_url })
-      return
-    }
-    if (asset.browser_download_url.endsWith('.dmg')) {
-      macURLs.push({ name: asset.name, url: asset.browser_download_url })
-      return
-    }
-    if (asset.browser_download_url.endsWith('.deb') ||
-        asset.browser_download_url.endsWith('.rpm') ||
-        asset.browser_download_url.endsWith('.AppImage')) {
-      linURLs.push({ name: asset.name, url: asset.browser_download_url })
-      return
-    }
+    _ext.winExt.forEach(ext => {
+      if (asset.browser_download_url.endsWith(ext)) {
+        winURLs.push({ name: asset.name, url: asset.browser_download_url })
+        return
+      }
+    })
+    _ext.macExt.forEach(ext => {
+      if (asset.browser_download_url.endsWith(ext)) {
+        macURLs.push({ name: asset.name, url: asset.browser_download_url })
+        return
+      }
+    })
+    _ext.linExt.forEach(ext => {
+      if (asset.browser_download_url.endsWith(ext)) {
+        linURLs.push({ name: asset.name, url: asset.browser_download_url })
+        return
+      }
+    })
   })
 
   return <Releases>{
