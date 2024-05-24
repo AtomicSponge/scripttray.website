@@ -4,6 +4,13 @@
 -->
 
 <template>
+  <header>
+    <img src="/src/assets/robot-96x96.png" class="logo"/>
+    <div>
+      <h1>Script Tray</h1>
+      Run commands from your system tray
+    </div>
+  </header>
   <table class="navigation">
     <tr>
       <td><a href="#downloads">Downloads</a></td>
@@ -14,13 +21,6 @@
       <td><a href="#downloads">Another</a></td>
     </tr>
   </table>
-  <header>
-    <img src="/src/assets/robot-96x96.png" class="logo"/>
-    <div>
-      <h1>Script Tray</h1>
-      Run commands from your system tray
-    </div>
-  </header>
 </template>
 
 <style lang="stylus" scoped>
