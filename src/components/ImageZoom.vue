@@ -35,7 +35,7 @@ const zoomOut = () => {
 <template>
   <img :id :src :alt :width :height class="mainImg" @click="zoomIn()">
   <div v-show="_showModal" class="modal" @click="zoomOut()">
-    <img :src :alt :class="_modalName" loading="lazy">
+    <img :src :alt :class="_modalName">
   </div>
 </template>
 
