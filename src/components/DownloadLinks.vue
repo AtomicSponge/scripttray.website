@@ -94,7 +94,7 @@ const checkGitHubReleases = async (__GitHubURL__:string):Promise<Releases> => {
   if (result.zipball_url)
     sourceURLs.push({ name: 'zipball', url: result.zipball_url })
 
-  result.assets.forEach((asset:{name: string, browser_download_url: string}) => {
+  result.assets.forEach((asset:{name:string, browser_download_url:string}) => {
     if (asset.browser_download_url.endsWith('.exe')) {
       winURLs.push({ name: asset.name, url: asset.browser_download_url })
       return
