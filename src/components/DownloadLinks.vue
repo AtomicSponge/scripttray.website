@@ -39,7 +39,7 @@ interface Releases {
  * @param __GitHubURL__ The GitHub API URL to parse
  * @returns Object containing processed results
  */
-const checkReleases = async (__GitHubURL__:string):Promise<Releases> => {
+const checkGitHubReleases = async (__GitHubURL__:string):Promise<Releases> => {
   const winURLs:Array<URLAsset> = []
   const macURLs:Array<URLAsset> = []
   const linURLs:Array<URLAsset> = []
@@ -121,40 +121,39 @@ const checkReleases = async (__GitHubURL__:string):Promise<Releases> => {
   }
 }
 
-const releases = ref(await checkReleases(GitHubURL))
+const _releases = ref(await checkGitHubReleases(GitHubURL))
 </script>
 
 <template>
-  <div><h2>Downloads</h2></div>
-  <div v-if="!releases.error" id="downloads">
-    <div v-show="releases.winURLs.length !== 0">
+  <div v-if="!_releases.error" id="downloads">
+    <div v-show="_releases.winURLs.length !== 0">
       <h3>Windows</h3>
       <ul>
-        <li v-for="link in releases.winURLs">
+        <li v-for="link in _releases.winURLs">
           <a :href="link.url">{{ link.name }}</a>
         </li>
       </ul>
     </div>
-    <div v-show="releases.macURLs.length !== 0">
+    <div v-show="_releases.macURLs.length !== 0">
       <h3>Mac</h3>
       <ul>
-        <li v-for="link in releases.macURLs">
+        <li v-for="link in _releases.macURLs">
           <a :href="link.url">{{ link.name }}</a>
         </li>
       </ul>
     </div>
-    <div v-show="releases.linURLs.length !== 0">
+    <div v-show="_releases.linURLs.length !== 0">
       <h3>Linux</h3>
       <ul>
-        <li v-for="link in releases.linURLs">
+        <li v-for="link in _releases.linURLs">
           <a :href="link.url">{{ link.name }}</a>
         </li>
       </ul>
     </div>
-    <div v-show="releases.sourceURLs.length !== 0">
+    <div v-show="_releases.sourceURLs.length !== 0">
       <h3>Source</h3>
       <ul>
-        <li v-for="link in releases.sourceURLs">
+        <li v-for="link in _releases.sourceURLs">
           <a :href="link.url">{{ link.name }}</a>
         </li>
       </ul>
@@ -162,7 +161,7 @@ const releases = ref(await checkReleases(GitHubURL))
   </div>
   <!-- Display error if any -->
   <div v-else id="downloads" class="error">
-    <span v-html="releases.message"></span>
+    <span v-html="_releases.message"></span>
   </div>
 </template>
 

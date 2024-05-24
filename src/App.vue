@@ -15,13 +15,11 @@ import ImageZoom from './components/ImageZoom.vue'
 <template>
   <SiteHeader/>
   <section>
-    <div>
-      <h2>Test header</h2>
-      test text<br/>test text<br/>test text<br/>
-    </div>
     <ImageZoom src="/src/assets/robot-96x96.png" width="100"/>
     <ImageZoom src="/src/assets/github-mark-white.png" width="100"/>
+
     <div>
+      <a id="downloads"></a><h2>Downloads</h2>
       <!-- Downloads -->
       <Suspense>
         <template #default>
@@ -32,18 +30,6 @@ import ImageZoom from './components/ImageZoom.vue'
         </template>
       </Suspense>
       <!-- End Downloads -->
-    </div>
-    <div>
-      <h2>Test header</h2>
-      test text<br/>test text<br/>test text<br/>
-    </div>
-    <div>
-      <h2>Test header</h2>
-      test text<br/>test text<br/>test text<br/>
-    </div>
-    <div>
-      <h2>Test header</h2>
-      test text<br/>test text<br/>test text<br/>
     </div>
   </section>
   <SiteFooter/>
