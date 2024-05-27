@@ -7,7 +7,4 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import './style.styl'
 
-//import ImageZoom from '@spongex/vue-image-zoom'
-
 createApp(App).mount('#app')
-//createApp(App).use(ImageZoom).mount('#app')
