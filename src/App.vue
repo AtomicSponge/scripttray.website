@@ -14,8 +14,8 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
 <template>
   <SiteHeader/>
   <section>
-    <div id="test">
-    <ImageZoom src="/src/assets/robot-96x96.png" width="100"/>
+    <div class="center">
+      <ImageZoom src="/src/assets/robot-96x96.png" width="100"/>
     </div>
     <ImageZoom src="/src/assets/github-mark-white.png" width="100"/>
 
@@ -45,7 +45,6 @@ section  //  main body
   flex auto
   overflow auto
   text-align left
-#test
-  margin 0 auto
+.center
   text-align center
 </style>
