@@ -33,17 +33,52 @@ interface Releases {
   error:boolean
 }
 
+/** Extension groups for adding to the check list */
+enum Extensions {
+  /** Windows extensions */
+  winExt,
+  /** Mac extensions */
+  macExt,
+  /** Linux extensions */
+  linExt
+}
+
 /**
  * Get the release JSON from the GitHub API
  * Then parse into URLs for each OS
  * @param __GitHubURL__ The GitHub API URL to parse
+ * @param opts List of optional extensions to check
+ * @param opts.group The extension group to add to.
+ * Valid options:  Extensions.winExt, Extensions.macExt, Extensions.linExt
+ * @param opts.extensions An array of extensions to add
  * @returns Object containing processed results
  */
-const checkGitHubReleases = async (__GitHubURL__:string):Promise<Releases> => {
+const checkGitHubReleases = async (
+  __GitHubURL__:string,
+  opts?:[{ group:Extensions, extensions:Array<string> }]
+):Promise<Releases> => {
   const _ext = {
     winExt: [ '.exe' ],
     macExt: [ '.dmg' ],
-    linExt: [ '.deb', '.rpm', '.AppImage' ]
+    linExt: [ '.deb', '.rpm', '.pacman', '.AppImage' ]
+  }
+
+  if(opts) {
+    opts.forEach(opt => {
+      switch(opt.group) {
+        case Extensions.winExt:
+          opt.extensions.forEach(ext => { _ext.winExt.push(ext) })
+          return
+        case Extensions.macExt:
+          opt.extensions.forEach(ext => { _ext.macExt.push(ext) })
+          return
+        case Extensions.linExt:
+          opt.extensions.forEach(ext => { _ext.linExt.push(ext) })
+          return
+        default:
+          return
+      }
+    })
   }
 
   const winURLs:Array<URLAsset> = []
