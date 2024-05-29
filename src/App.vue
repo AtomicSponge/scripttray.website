@@ -89,12 +89,14 @@ section  //  main body
   overflow auto
   text-align left
   margin-top 16px
+h3
+  padding-left 16px
 hr
   border 1px solid rgba(30, 35, 82, 0.75)
+.subdiv
+  width 80%
+  margin-left 8px
 .center-img
   text-align center
   padding 12px
-.subdiv
-  width 80%
-  margin-left 0
 </style>
