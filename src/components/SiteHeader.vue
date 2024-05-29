@@ -13,12 +13,9 @@
   </header>
   <table>
     <tr>
+      <td><a href="#top">Top</a></td>
       <td><a href="#downloads">Downloads</a></td>
-      <td><a href="#downloads">Another</a></td>
-    </tr>
-    <tr>
-      <td><a href="#downloads">Downloads</a></td>
-      <td><a href="#downloads">Another</a></td>
+      <td><a href="#features">Features</a></td>
     </tr>
   </table>
 </template>
