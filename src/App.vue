@@ -55,7 +55,7 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
       <strong><em>?<| example |></em></strong>
     </div>
 
-    <h3>Output Buffer</h3><hr class="subdiv"/>
+    <hr class="subdiv"/><h3>Output Buffer</h3><hr class="subdiv"/>
 
     <div class="center-img">
       <ImageZoom src="/public/image/screenshot-buffer.png" width="420"/>
@@ -66,7 +66,7 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
       file <em>(.log or .txt)</em> from the tray menu.
     </div>
 
-    <h3>Job Manager</h3><hr class="subdiv"/>
+    <hr class="subdiv"/><h3>Job Manager</h3><hr class="subdiv"/>
 
     <div class="center-img">
       <ImageZoom src="/public/image/screenshot-jobmgr.png" width="420"/>
@@ -89,6 +89,8 @@ section  //  main body
   overflow auto
   text-align left
   margin-top 16px
+hr
+  border 1px solid rgba(30, 35, 82, 0.75)
 .center-img
   text-align center
   padding 12px

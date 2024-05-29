@@ -20,13 +20,13 @@ button_hv_color = rgb(100, 108, 255)
 button_shadow_color = rgb(105, 105, 105)
 
 :root
-  font-family app_font_family
-  font-size app_font_size
-  line-height app_line_height
-  font-weight app_font_weight
+  font-family Inter, system-ui, Avenir, Helvetica, Arial, sans-serif
+  font-size medium
+  line-height 1.2
+  font-weight 400
 
-  color app_fg_color
-  background-color app_bg_color
+  color rgba(255, 255, 255, 0.87)
+  background-color rgb(81, 76, 30)
 
   font-synthesis none
   text-rendering optimizeLegibility
@@ -34,11 +34,15 @@ button_shadow_color = rgb(105, 105, 105)
   -moz-osx-font-smoothing grayscale
 
 a
-  font-weight (app_font_weight + 200)
-  color app_link_color
+  font-weight 600
+  color rgb(172, 186, 230)
   text-decoration inherit
+a:visited
+  color rgb(172, 186, 230)
 a:hover
-  color app_link_hover_color
+  color rgb(172, 216, 255)
+a:active
+  color rgb(172, 216, 255)
 
 body
   margin 0
