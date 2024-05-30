@@ -12,7 +12,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
-    "@spongex/check-github-releases": "^1.0.0",
+    "@spongex/check-github-releases": "^1.1.0",
     "@spongex/vue-image-zoom": "^1.0.0",
     "vue": "^3.4.27"
   },
