@@ -80,10 +80,6 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
 </template>
 
 <style lang="stylus" scoped>
-.navBtns
-  text-align center
-  margin-top 12px
-  margin-bottom 12px
 section  //  main body
   flex auto
   overflow auto
