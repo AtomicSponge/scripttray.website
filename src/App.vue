@@ -21,7 +21,7 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
     </div>
 
     <div class="center-img">
-      <ImageZoom src="/image/screenshot-traymenu.png" width="280"/>
+      <ImageZoom src="/image/screenshot-traymenu.png" caption="Run commands with a click of a button!" width="280"/>
     </div>
 
     Written in <a href="https://www.electronjs.org/">Electron</a> and
@@ -45,7 +45,7 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
     <h3>Settings Menu</h3><hr class="subdiv"/>
 
     <div class="center-img">
-      <ImageZoom src="/image/screenshot-settings.png" width="420"/>
+      <ImageZoom src="/image/screenshot-settings.png" caption="Build custom menus within the app!" width="420"/>
     </div>
 
     <div>
@@ -58,7 +58,7 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
     <hr class="subdiv"/><h3>Output Buffer</h3><hr class="subdiv"/>
 
     <div class="center-img">
-      <ImageZoom src="/image/screenshot-buffer.png" caption="yolo" width="420"/>
+      <ImageZoom src="/image/screenshot-buffer.png" caption="See previously ran commands with output styling!" width="420"/>
     </div>
 
     <div>
@@ -69,7 +69,7 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
     <hr class="subdiv"/><h3>Job Manager</h3><hr class="subdiv"/>
 
     <div class="center-img">
-      <ImageZoom src="/image/screenshot-jobmgr.png" width="420"/>
+      <ImageZoom src="/image/screenshot-jobmgr.png" caption="View running jobs and cancel running or hung scripts!" width="420"/>
     </div>
 
     <div>
