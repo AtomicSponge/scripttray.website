@@ -58,7 +58,7 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
     <hr class="subdiv"/><h3>Output Buffer</h3><hr class="subdiv"/>
 
     <div class="center-img">
-      <ImageZoom src="/image/screenshot-buffer.png" width="420"/>
+      <ImageZoom src="/image/screenshot-buffer.png" caption="yolo" width="420"/>
     </div>
 
     <div>
