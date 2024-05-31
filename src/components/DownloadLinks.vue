@@ -8,8 +8,8 @@ import { ref } from 'vue'
 
 import { checkGitHubReleases } from '@spongex/check-github-releases'
 
-//const GitHubURL = 'https://api.github.com/repos/AtomicSponge/script-tray/releases/latest'
-const GitHubURL = 'https://api.github.com/repos/vercel/hyper/releases/latest'
+const GitHubURL =
+  'https://api.github.com/repos/AtomicSponge/script-tray/releases/latest'
 
 const _releases = ref(await checkGitHubReleases(GitHubURL))
 </script>
