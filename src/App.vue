@@ -84,7 +84,9 @@ section  //  main body
   flex auto
   overflow auto
   text-align left
-  margin-top 16px
+  margin-top 12px
+  padding-top 8px
+  padding-bottom 8px
 h3
   padding-left 16px
 hr
