@@ -36,8 +36,9 @@ const toggleShow = () => {
 <template>
   <footer>
     <div class="title">
-      Copyright &#169; 2024-present Matthew Evans
+      Copyright &#169; 2024-present
       <a href="https://github.com/AtomicSponge">
+        Matthew Evans
         <img src="/src/assets/github-mark-white.png" class="github"/>
       </a>
     </div>
