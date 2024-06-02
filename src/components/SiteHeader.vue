@@ -6,8 +6,12 @@
 <template>
   <header>
     <img src="/src/assets/robot-96x96.png" class="logo"/>
-    <div>
+    <div class="title_a">
       <h1>Script Tray</h1>
+      Run commands from your system tray
+    </div>
+    <div class="title_b">
+      <h1>Script</h1><h1>Tray</h1>
       Run commands from your system tray
     </div>
   </header>
@@ -38,8 +42,17 @@ td
   align-self flex-end
   width 96px
   height 96px
+.title_a
+  display block
+.title_b
+  display none
 
 @media only screen and (max-width: 700px)
   table
     display none
+@media only screen and (max-width: 410px)
+  .title_a
+    display none
+  .title_b
+    display block
 </style>
