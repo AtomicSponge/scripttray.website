@@ -85,6 +85,7 @@ section  //  main body
   overflow auto
   text-align left
   margin-top 12px
+  margin-bottom 4px
   padding-top 8px
   padding-bottom 8px
 h3
