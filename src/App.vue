@@ -24,9 +24,11 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
       <ImageZoom src="/image/screenshot-traymenu.png" caption="Run commands with a click of a button!" width="280"/>
     </div>
 
-    Written in <a href="https://www.electronjs.org/">Electron</a> and
-    <a href="https://vuejs.org/">Vue</a>, <strong>Script Tray</strong> is cross
-    platform and will run on Windows, Mac or Linux.
+    <div>
+      Written in <a href="https://www.electronjs.org/">Electron</a> and
+      <a href="https://vuejs.org/">Vue</a>, <strong>Script Tray</strong> is cross
+      platform and will run on Windows, Mac or Linux.
+    </div>
 
     <hr/><a id="downloads"></a><h2>Downloads</h2><hr/>
     <!-- Downloads -->
