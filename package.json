@@ -14,7 +14,7 @@
   "dependencies": {
     "@spongex/check-github-releases": "^1.1.0",
     "@spongex/vue-image-zoom": "^1.1.1",
-    "vue": "^3.4.28"
+    "vue": "^3.4.29"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "^5.0.5",
