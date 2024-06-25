@@ -55,9 +55,11 @@ const _releases = ref(await checkGitHubReleases(GitHubURL))
   </div>
 </template>
 
-<style lang="stylus" scoped>
-#downloads
-  margin-left 24px
-.error
-  color rgb(255, 40, 0)
+<style scoped>
+#downloads {
+  margin-left: 24px;
+}
+.error {
+  color: rgb(255, 40, 0);
+}
 </style>

@@ -81,23 +81,28 @@ import { ImageZoom } from '@spongex/vue-image-zoom'
   <SiteFooter/>
 </template>
 
-<style lang="stylus" scoped>
-section  //  main body
-  flex auto
-  overflow auto
-  text-align left
-  margin-top 12px
-  margin-bottom 4px
-  padding-top 8px
-  padding-bottom 8px
-h3
-  padding-left 16px
-hr
-  border 1px solid rgba(30, 35, 82, 0.75)
-.subdiv
-  width 80%
-  margin-left 8px
-.center-img
-  text-align center
-  padding 12px
+<style scoped>
+section {
+  flex: auto;
+  overflow: auto;
+  text-align: left;
+  margin-top: 12px;
+  margin-bottom: 4px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+h3 {
+  padding-left: 16px;
+}
+hr {
+  border: 1px solid rgba(30, 35, 82, 0.75);
+}
+.subdiv {
+  width: 80%;
+  margin-left: 8px;
+}
+.center-img {
+  text-align: center;
+  padding: 12px;
+}
 </style>

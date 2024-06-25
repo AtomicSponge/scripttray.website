@@ -24,35 +24,46 @@
   </table>
 </template>
 
-<style lang="stylus" scoped>
-header
-  margin-left auto
-  display flex
-  text-align right
-  line-height 1.5
-table
-  table-layout fixed
-  position absolute
-  top 12px
-  left 16px
-td
-  padding-right 18px
-  padding-bottom 4px
-.logo
-  align-self flex-end
-  width 96px
-  height 96px
-.title_a
-  display block
-.title_b
-  display none
+<style scoped>
+header {
+  margin-left: auto;
+  display: flex;
+  text-align: right;
+  line-height: 1.5;
+}
+table {
+  table-layout: fixed;
+  position: absolute;
+  top: 12px;
+  left: 16px;
+}
+td {
+  padding-right: 18px;
+  padding-bottom: 4px;
+}
+.logo {
+  align-self: flex-end;
+  width: 96px;
+  height: 96px;
+}
+.title_a {
+  display: block;
+}
+.title_b {
+  display: none;
+}
 
-@media only screen and (max-width: 700px)
-  table
-    display none
-@media only screen and (max-width: 410px)
-  .title_a
-    display none
-  .title_b
-    display block
+@media only screen and (max-width: 700px) {
+  table {
+    display: none;
+  }
+}
+@media only screen and (max-width: 410px) {
+  .title_a {
+    display: none;
+  }
+  .title_b {
+    display: block;
+  }
+}
 </style>
