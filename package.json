@@ -14,12 +14,12 @@
   "dependencies": {
     "@spongex/check-github-releases": "^1.1.0",
     "@spongex/vue-image-zoom": "^1.1.2",
-    "vue": "^3.4.38"
+    "vue": "^3.5.10"
   },
   "devDependencies": {
-    "@vitejs/plugin-vue": "^5.1.2",
-    "typescript": "^5.5.4",
-    "vite": "^5.4.2",
-    "vue-tsc": "^2.0.29"
+    "@vitejs/plugin-vue": "^5.1.4",
+    "typescript": "^5.6.2",
+    "vite": "^5.4.8",
+    "vue-tsc": "^2.1.6"
   }
 }
